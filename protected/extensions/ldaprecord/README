@@ -1,0 +1,26 @@
+
+ldaprecord copyright 2010-2011 Christian Wittkowski
+
+Features
+* Usage similar to CActiveRecord
+  * similar call syntax (see Usage)
+  * use of ActiveForms
+  * define relations analogous to CActiveRecord
+* Read / Modify / Save a Node
+* Read a subtree
+
+Next steps
+* implement a DataProvider and a Sort class (can be used with 'zii.widgets.CListView')
+* implement a caching mechanism for objectclasses and attributetypes
+* read attribute limitations from Ldap server
+
+Usage
+Read a Ldap node by DN
+$node = CLdapRecord::model('<yourclassname>')->findByDn('<theDN>');
+
+Read a Ldap subtree
+$nodes = CLdapRecord::model('LdapSubTree')->findSubTree();
+
+
+Howto set relations
+Edit method relations() in your class inherited from CLdapRecord (howto see Comment CLdapRecord->relations()).
